@@ -16,29 +16,44 @@ body {
 
 .calander {
   display: flex;
-  background-color: aqua;
-  padding: 25px 500px 450px 0px;
+  flex-direction: column;
+  /* background-color: aqua; */
+  padding: 0;
+  margin: 75px 400px 0px 500px;
  }
+
+ .toggle {
+   text-align: center;
+ }
+
+ .Add {
+   margin: 50px 0px 0px 0px;
+ }
+
+ .calander .meeting {
+   display: flex;
+   flex-direction: column;
+   padding: 0px 100px 0px 100px;
+   margin: 0px 0px 0px 0px;
+
+ }
+.calander .meeting .name {
+  padding: 25px 35px 25px 25px;
+}
+
 .main {
   display: flex;
   min-height: 100vh;
   align-items: stretch;
 }
 
-.main .left,
-.main .right {
-  flex: 1;
-}
 
-.main .right,
-.left {
-  padding: 50px;
-}
 
-.main .right form {
+
+.main  form {
   display: flex;
   flex-direction: column;
-  margin: 75px 450px 0 0px;
+  margin: 100px 0px 0 500px;
   padding-top: 100px;
   padding-bottom: 70px;
   padding-left: 25px;
@@ -47,7 +62,7 @@ body {
   border-radius: 50px;
 }
 
-.main .right form button {
+.main form button {
   margin: 0 80px;
   padding: 5px;
   border-radius: 5px;
@@ -64,12 +79,12 @@ body {
 
 }
 
-.main .right form button:hover,
-.left div form button:hover {
+.main form button:hover,
+ div form button:hover {
   background-color: #e7e7e7;
 }
 
-.main .right form input {
+.main form input {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 10px;
@@ -79,10 +94,18 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border: none;
+ 
+}
+.modalInput {
+  text-align: center;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
-.main .right form label,
-.left div form label {
+
+
+.main form label,
+ div form label {
   text-align: center;
   padding-bottom: 25px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;

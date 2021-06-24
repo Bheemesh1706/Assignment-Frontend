@@ -7,4 +7,13 @@ const loginSchema =yup.object().shape({
     Password: yup.string().min(6).max(15).required()
 })
 
-export {loginSchema}
+const meetingSchema = yup.object().shape(
+    {
+        Title: yup.string().required(),
+        Description: yup.string().required(),
+        Start: yup.string().required(),
+        End: yup.string().required()
+    }
+)
+
+export {loginSchema,meetingSchema}

@@ -18,9 +18,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
         <div className="main">
-          <div className="left"></div>
           {username ? (
             <Switch>
               <Route path="/meeting">
@@ -41,7 +39,6 @@ function App() {
             </Switch>
           )}
         </div>
-      </div>
     </Router>
   );
 }
