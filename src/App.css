@@ -14,7 +14,11 @@ body {
 
 
 
-
+.calander {
+  display: flex;
+  background-color: aqua;
+  padding: 25px 500px 450px 0px;
+ }
 .main {
   display: flex;
   min-height: 100vh;

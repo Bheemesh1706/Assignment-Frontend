@@ -27,10 +27,9 @@ export function LoginForm ({usernameProps})
        sendDataLogin(e).then((a)=>{ 
            if(a === 'Success!')   
            {setUsername(e.Username)
-            setRedirect('/meeting')}
+           setRedirect('/meeting')}
         })
-
-        console.log(username)
+       
     
     }
     

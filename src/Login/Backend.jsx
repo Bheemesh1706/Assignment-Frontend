@@ -7,10 +7,12 @@ const sendDataLogin = async(data)=>
     try{  
            
                    console.log('login_axios')
+                   console.log(data.Password)
                   const response = await axi.post(`${API_HOST}/login`, {
                               username: data.Username,
                               password: data.Password,
                           })
+                 
                 return response.data.success_message
               
               }
