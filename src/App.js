@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+import {LoginForm} from './Login/LoginComponent'
+import useLocalStorage from './hooks/uselocalstorage'
+import React from "react";
+import {Meeting} from "./Meeting/MeetingComponent"
 
 function App() {
+
+  const usernameProps = useLocalStorage('username')
+  const [username] = usernameProps
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="main">
+          <div className="left"></div>
+          {username ? (
+            <Switch>
+              <Route path="/meeting">
+                <Meeting/>
+              </Route>
+              <Route>
+                <Redirect to="/meeting" />
+              </Route>
+            </Switch>
+          ) : (
+            <Switch>
+              <Route exact path="/">
+                <LoginForm usernameProps={usernameProps} />
+              </Route>
+              <Route>
+                <Redirect to="/" />
+              </Route>
+            </Switch>
+          )}
+        </div>
+      </div>
+    </Router>
   );
 }
 

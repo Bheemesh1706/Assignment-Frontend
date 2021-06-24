@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+* {
+  margin: 0%;
+  color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input:focus {
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #ffffff;
+  /* overflow: hidden; */
 }
 
-.App-header {
-  background-color: #282c34;
+
+
+
+.main {
+  display: flex;
   min-height: 100vh;
+  align-items: stretch;
+}
+
+.main .left,
+.main .right {
+  flex: 1;
+}
+
+.main .right,
+.left {
+  padding: 50px;
+}
+
+.main .right form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 75px 450px 0 0px;
+  padding-top: 100px;
+  padding-bottom: 70px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #BEB9B9;
+  border-radius: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.main .right form button {
+  margin: 0 80px;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: white;
+  transition: 0.4s;
+  cursor: pointer;
+  outline: none;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main .right form button:hover,
+.left div form button:hover {
+  background-color: #e7e7e7;
 }
+
+.main .right form input {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: none;
+}
+
+.main .right form label,
+.left div form label {
+  text-align: center;
+  padding-bottom: 25px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+.error1,
+.error2,
+.error3 {
+  text-align: center;
+  color: red;
+  padding-bottom: 5px;
+}
+
+#error {
+  text-align: center;
+  color: red;
+  padding-bottom: 5px;
+}
+
+
+
+
