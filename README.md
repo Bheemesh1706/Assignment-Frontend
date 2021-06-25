@@ -1,5 +1,8 @@
 # DOCUMENTATION
 ## [App Live Link](https://ecstatic-babbage-7ffd36.netlify.app/)
+Credentials
+- Username: Test@123
+- Password : Password@123
 ## API ENDPOINTS 
 
 Backend endpoint
