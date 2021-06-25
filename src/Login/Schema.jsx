@@ -12,7 +12,8 @@ const meetingSchema = yup.object().shape(
         Title: yup.string().required(),
         Description: yup.string().required(),
         Start: yup.string().required(),
-        End: yup.string().required()
+        End: yup.string().required(),
+        id: yup.string()
     }
 )
 
