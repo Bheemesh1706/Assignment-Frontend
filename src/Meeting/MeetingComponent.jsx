@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { AddMeeting } from './AddMeeting'
-import { getMeeting } from '../Login/Backend'
+import { getMeeting , deleteMeeting } from '../Login/Backend'
 
 
 export function Meeting ()
@@ -22,7 +22,14 @@ export function Meeting ()
         })
     },[])
 
+    const handleDeletion = (id) => {
 
+        deleteMeeting(id).then((e)=>
+        {
+            if(e==='Meeting Deleted')
+            { window.location.reload();}
+        })
+    }
   
 
     return(
@@ -43,7 +50,7 @@ export function Meeting ()
                                 <Card.Subtitle className="mb-2 text-muted">{meet.Start}</Card.Subtitle>
                                 <Card.Subtitle className="mb-2 text-muted">{meet.End}</Card.Subtitle>
                                 <AddMeeting meetingProp={meet}></AddMeeting>
-                                <Button variant="danger" size="sm">Delete</Button>
+                                <Button variant="danger" size="sm" onClick= {()=>{handleDeletion(meet.id)}}  >Delete</Button>
                             </Card.Body>
                             </Accordion.Collapse>
                         </Card>

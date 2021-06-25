@@ -82,11 +82,15 @@ const updateMeeting = async(data) =>
 
 }
 
-const deleteMeeting = async(data) =>
+const deleteMeeting = async(id) =>
 {
     try
-    {
-        
+    {   console.log(id)
+        const response = await axi.delete(`${API_HOST}/meetings/${id}`,{
+            id: id
+        })
+
+        return response.data.success_message
     }
 
     catch (error)
@@ -97,5 +101,5 @@ const deleteMeeting = async(data) =>
 
 
 
-export {sendDataLogin,handleLogout,getMeeting,setMeeting,updateMeeting}
+export {sendDataLogin,handleLogout,getMeeting,setMeeting,updateMeeting,deleteMeeting}
  
