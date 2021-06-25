@@ -24,11 +24,10 @@ const sendDataLogin = async(data)=>
           } 
 }
 
-const handleLogout = async(setRedirect) =>
+const handleLogout = async() =>
 {
-    const response = await axi.get(`${API_HOST}/logout`)
+    const response = await axi.delete(`${API_HOST}/logout`)
     localStorage.clear();
-    setRedirect('/login')
     window.location.reload();
     
 }

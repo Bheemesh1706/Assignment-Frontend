@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { AddMeeting } from './AddMeeting'
-import { getMeeting , deleteMeeting } from '../Login/Backend'
+import { getMeeting , deleteMeeting ,handleLogout} from '../Login/Backend'
 
 
 export function Meeting ()
@@ -34,14 +34,14 @@ export function Meeting ()
 
     return(
         <div className = "calander">
-          
 
+           
+        <Button variant= "danger" className="Logout" onClick={()=>{handleLogout()}}>Logout</Button>
             <div className="meeting">
-                <label className= "name">Meeting</label>
                 { meetings.map((meet,index) =>(
-                    <Accordion defaultActiveKey="0">
-                        <Card>
-                            <Accordion.Toggle as={Card.Header} eventKey={meet.id+1} className="toggle">
+                    <Accordion defaultActiveKey="0" className="design" >
+                        <Card className="designcard">
+                            <Accordion.Toggle as={Card.Header} eventKey={meet.id+1} className="toggle " >
                                   {meet.Title}
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey={meet.id+1}>
@@ -50,7 +50,7 @@ export function Meeting ()
                                 <Card.Subtitle className="mb-2 text-muted">{meet.Start}</Card.Subtitle>
                                 <Card.Subtitle className="mb-2 text-muted">{meet.End}</Card.Subtitle>
                                 <AddMeeting meetingProp={meet}></AddMeeting>
-                                <Button variant="danger" size="sm" onClick= {()=>{handleDeletion(meet.id)}}  >Delete</Button>
+                                <Button variant="danger" className="ml-1"   onClick= {()=>{handleDeletion(meet.id)}}>Delete</Button>
                             </Card.Body>
                             </Accordion.Collapse>
                         </Card>
